@@ -1,5 +1,5 @@
 # ext.ExportableGrid
-Wrapper over [ExtJs's](https://www.sencha.com/products/extjs/#overview) [grid](http://docs.sencha.com/extjs/6.0/6.0.1-classic/#!/api/Ext.grid.Panel) to make grid exportable.
+Wrapper over [ExtJs's](https://www.sencha.com/products/extjs/#overview) [grid](http://docs.sencha.com/extjs/6.0/6.0.1-classic/#!/api/Ext.grid.Panel) to make grid exportable. Example can be found on sencha's [fiddle](https://fiddle.sencha.com/#fiddle/t37).
 
 Dependencies
 ------------
