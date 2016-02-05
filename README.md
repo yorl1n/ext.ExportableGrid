@@ -7,9 +7,9 @@ This component uses two opensource libraries([FileSaver](https://github.com/elig
 
 ExportableGrid's specific properties
 --------------------------
-**xlsTitle** - name of exported file + will be shown in excel as a table header if **xlsShowHeader** is set to true.
-**xlsHeaderColor** - backgound color of the headers. RGB without leading #.
-**xlsGroupHeaderColor** - backgound color of the grouping headers. RGB without leading #.
-**xlsSummaryColor** - backgound color of the summary section. RGB without leading #.
-**xlsShowHeader** - just a marker, whether a first row title should be generated.
+- **xlsTitle** - name of exported file + will be shown in excel as a table header if **xlsShowHeader** is set to true.
+- **xlsHeaderColor** - backgound color of the headers. RGB without leading #.
+- **xlsGroupHeaderColor** - backgound color of the grouping headers. RGB without leading #.
+- **xlsSummaryColor** - backgound color of the summary section. RGB without leading #.
+- **xlsShowHeader** - just a marker, whether a first row title should be generated.
 
