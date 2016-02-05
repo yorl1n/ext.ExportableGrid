@@ -13,3 +13,10 @@ ExportableGrid's specific properties
 - **xlsSummaryColor** - backgound color of the summary section. RGB without leading #.
 - **xlsShowHeader** - just a marker, whether a first row title should be generated.
 
+Additional parameters for columns
+---------------------------------
+- **exportable** - `true/false` - defines whether this column should be exported. 
+- **exportConverter** - function that shoud be applyed to value on export. Returns modified value. If **exportConverter** is specified, then renderer will be skiped and exportConverter function will be used on export. 
+- **skipRenderer** - `true/false` - set to true to skip using renderer on export for this column. 
+- **exportNumberFormat** - `<#,##.00>` - valid excel's number format.
+
