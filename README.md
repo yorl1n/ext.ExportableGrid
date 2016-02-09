@@ -1,5 +1,5 @@
 # ext.ExportableGrid
-Wrapper over [ExtJs's](https://www.sencha.com/products/extjs/#overview) [grid](http://docs.sencha.com/extjs/6.0/6.0.1-classic/#!/api/Ext.grid.Panel) to make grid exportable. Supports ExtJs 5 and ExtJs 6. Example can be found on sencha's [fiddle](https://fiddle.sencha.com/#fiddle/t37). Supports composite headers, summary feature and grouping feature.
+Wrapper over [ExtJs's](https://www.sencha.com/products/extjs/#overview) [grid](http://docs.sencha.com/extjs/6.0/6.0.1-classic/#!/api/Ext.grid.Panel) to make grid exportable to xlsx format. Supports ExtJs 5 and ExtJs 6. Example can be found on sencha's [fiddle](https://fiddle.sencha.com/#fiddle/t37). Supports composite headers, summary feature and grouping feature.
 
 Dependencies
 ------------
