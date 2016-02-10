@@ -1,3 +1,15 @@
+/**
+ * ExportableGrid.js
+ * Wrapper over ExtJs's grid to make grid exportable to xlsx format.
+ * 
+ * (c) 2016 Nikita Metzger
+ * Distributed under MIT license:
+ * https://github.com/yorl1n/ext.ExportableGrid/blob/master/LICENSE.md
+ * 
+ * ExportableGrid library uses two libraries distributed under the MIT license:
+ * FileSaver.js - https://github.com/eligrey/FileSaver.js
+ * jszip.js - https://github.com/Stuk/jszip
+ */
 Ext.define('Ext.ux.ExportableGrid', {
     extend: 'Ext.grid.GridPanel',
     xtype: 'exportablegrid',
