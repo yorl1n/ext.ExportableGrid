@@ -497,7 +497,7 @@ Ext.define('Ext.ux.ExportableGrid', {
                                         summaryVal = summaryObj[gr.getGroupKey()];
                                     }
                                     if (exCol.summaryRenderer) {
-                                        modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['groupingsummary'].summaryData, exCol.dataIndex);
+                                        modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['groupingsummary'].summaryData, exCol.dataIndex, this.view.cellValues);
                                     } else {
                                         modelData[exCol.dataIndex] = summaryVal;
                                     }
@@ -517,7 +517,7 @@ Ext.define('Ext.ux.ExportableGrid', {
                     if (exCol) {
                         var summaryVal = features['summary'].getSummary(this.store, exCol.summaryType, exCol.dataIndex);
                         if (exCol.summaryRenderer) {
-                            modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['summary'].summaryData, exCol.dataIndex);
+                            modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['summary'].summaryData, exCol.dataIndex, this.view.cellValues);
                         } else {
                             modelData[exCol.dataIndex] = summaryVal;
                         }
