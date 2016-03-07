@@ -468,8 +468,8 @@ Ext.define('Ext.ux.ExportableGrid', {
                 }
                 if (tpl != null) {
                     storeGroups.each(function (gr) {
-                        var groupColumn = this.view.getColumnManager().getHeaderByDataIndex(this.store.groupField);
-                        var renderedGroupValue = groupColumn.config.renderer ? groupColumn.config.renderer(gr.getAt(0).get(this.store.groupField), {}, gr.getAt(0)) : gr.getGroupKey();
+                        var groupColumn = this.view.getColumnManager().getHeaderByDataIndex(this.store.getGroupField());
+                        var renderedGroupValue = groupColumn.config.renderer ? groupColumn.config.renderer(gr.getAt(0).get(this.store.getGroupField()), {}, gr.getAt(0)) : gr.getGroupKey();
                         var groupingHeaderValue = tpl.apply({
                             groupValue: gr.getGroupKey(),
                             groupField: this.store.groupField,
