@@ -49,7 +49,7 @@ Ext.define('Ext.ux.ExportableGrid', {
             },
             export: function(grid) {
                 var content = this.zip.generate({type: 'blob', mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
-                saveAs(content, grid.xlsTitle + '.xlsx');
+                saveAs(content, exportTask.xlsTitle + '.xlsx');
             }
         };
 
