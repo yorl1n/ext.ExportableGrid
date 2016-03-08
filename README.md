@@ -54,7 +54,7 @@ getExportableColumnType: function (gridColumn) {
 }
 ```
 
-Replace bold line
+Replace marked with asterisk line
 ```javascript
 if (!rec.isSummary && !rec.isGroupingHeader) {
                         if (param.xtype === 'templatecolumn') {
@@ -64,7 +64,7 @@ if (!rec.isSummary && !rec.isGroupingHeader) {
                         } else if (!param.skipRenderer && param.renderer) {
                             type = 'renderer';
                         } else {
-                            **type = this.getExportableColumnType(exportTask.exportableColumns[j]);**
+*                            type = this.getExportableColumnType(exportTask.exportableColumns[j]);
                         }
                     } else {
                         type = 's';
