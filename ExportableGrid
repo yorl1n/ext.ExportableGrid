@@ -48,8 +48,9 @@ Ext.define('Ext.ux.ExportableGrid', {
                 styles: []
             },
             export: function(grid) {
-                var content = this.zip.generate({type: 'blob', mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
-                saveAs(content, exportTask.xlsTitle + '.xlsx');
+                this.zip.generateAsync({type: 'blob', mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}).then(function (content) {
+                    saveAs(content, exportTask.xlsTitle + '.xlsx');
+                });
             }
         };
 
