@@ -114,7 +114,8 @@ Ext.define('Ext.ux.ExportableGrid', {
          * @returns {Boolean}
          */
         isColumnExportable: function (col) {
-            if (col.xtype !== 'actioncolumn' && (col.dataIndex !== '') && !col.hidden && (col.exportable === undefined || col.exportable)) {
+            if (col.xtype !== 'actioncolumn' && (col.dataIndex !== '') && !col.hidden && (col.exportable === undefined || col.exportable)
+            && col.innerCls !== Ext.baseCSSPrefix + 'grid-cell-inner-row-expander') {
                 return true;
             } else {
                 return false;
