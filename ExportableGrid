@@ -572,6 +572,7 @@ Ext.define('Ext.ux.ExportableGrid', {
                             break;
                         case 'renderer':
                             var renderCol = exportTask.exportableColumns[j];
+			    this.view.cellValues.column = param;
                             var renderedValue = param.renderer.call(renderCol.usingDefaultRenderer ? renderCol : renderCol.scope || this.view.ownerCt,rec.get(param.dataIndex), this.view.cellValues, rec, i, j, this.store, this.view);
                             if (renderedValue != null) {
                                 rows += '<c r="' + exportTask.alphabetColumns[currentCol++] + currentRow + '" t="str" s="' + (j + this.staticStylesCount) + '"><v>' + this.removeSpecials(Ext.util.Format.htmlEncode(String(renderedValue))) + '</v></c>';
