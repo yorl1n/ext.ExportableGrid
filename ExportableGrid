@@ -493,11 +493,8 @@ Ext.define('Ext.ux.ExportableGrid', {
                             for (var i = 0; i < exportTask.exportableColumns.length; i++) {
                                 var exCol = exportTask.exportableColumns[i];
                                 if (exCol) {
-                                    var summaryObj = features['groupingsummary'].getSummary(this.store, exCol.summaryType, exCol.dataIndex);
-                                    var summaryVal = null;
-                                    if (summaryObj) {
-                                        summaryVal = summaryObj[gr.getGroupKey()];
-                                    }
+				    var summaryObj = features['groupingsummary'].getSummary(this.store, exCol.summaryType, exCol.dataIndex, this.store.getGroups().map[gr.getGroupKey()]);
+                                    var summaryVal = (summaryObj instanceof Object) && !(summaryObj instanceof Date)? summaryObj[gr.getGroupKey()] : summaryObj;
                                     if (exCol.summaryRenderer) {
                                         modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['groupingsummary'].summaryData, exCol.dataIndex, this.view.cellValues);
                                     } else {
