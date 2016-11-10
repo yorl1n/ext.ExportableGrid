@@ -495,7 +495,9 @@ Ext.define('Ext.ux.ExportableGrid', {
                                 if (exCol) {
 				    var summaryObj = features['groupingsummary'].getSummary(this.store, exCol.summaryType, exCol.dataIndex, this.store.getGroups().map[gr.getGroupKey()]);
                                     var summaryVal = (summaryObj instanceof Object) && !(summaryObj instanceof Date)? summaryObj[gr.getGroupKey()] : summaryObj;
-                                    if (exCol.summaryRenderer) {
+                                    if (exCol.groupingSummaryConverter) {
+                                        modelData[exCol.dataIndex] = exCol.groupingSummaryConverter(summaryVal, features['groupingsummary'].summaryData, exCol.dataIndex, this.view.cellValues);
+                                    } else if (exCol.summaryRenderer) {
                                         modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['groupingsummary'].summaryData, exCol.dataIndex, this.view.cellValues);
                                     } else {
                                         modelData[exCol.dataIndex] = summaryVal;
@@ -515,7 +517,9 @@ Ext.define('Ext.ux.ExportableGrid', {
                     var exCol = exportTask.exportableColumns[i];
                     if (exCol) {
                         var summaryVal = features['summary'].getSummary(this.store, exCol.summaryType, exCol.dataIndex);
-                        if (exCol.summaryRenderer) {
+                        if (exCol.summaryConverter) {
+                            modelData[exCol.dataIndex] = exCol.summaryConverter(summaryVal, features['summary'].summaryData, exCol.dataIndex, this.view.cellValues);
+                        } else if (exCol.summaryRenderer) {
                             modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['summary'].summaryData, exCol.dataIndex, this.view.cellValues);
                         } else {
                             modelData[exCol.dataIndex] = summaryVal;
