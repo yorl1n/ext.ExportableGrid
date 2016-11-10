@@ -19,6 +19,8 @@ Additional parameters for columns
 - **exportConverter** - function that shoud be applyed to value on export. Returns modified value. If **exportConverter** is specified, then renderer will be skiped and exportConverter function will be used on export. 
 - **skipRenderer** - `true/false` - set to true to skip using renderer on export for this column. 
 - **exportNumberFormat** - `<#,##.00>` - valid excel's number format.
+- **summaryConverter** - function.If specified it will be used as renderer for summary feature in exported xls.
+- **groupingSummaryConverter** - function.If specified it will be used as renderer for goupingsummary feature in exported xls.
 
 Possible improvements
 -----------------------
