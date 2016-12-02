@@ -506,7 +506,7 @@ Ext.define('Ext.ux.ExportableGrid', {
                                 }
                             }
                             var summaryM = Ext.create('Ext.data.Model', modelData);
-                            summaryM.isSummary = true;
+                            summaryM.isSummaryRecord = true;
                             renderRecords.push(summaryM);
                         }
                     }, this);
@@ -528,7 +528,7 @@ Ext.define('Ext.ux.ExportableGrid', {
                     }
                 }
                 var summaryM = Ext.create('Ext.data.Model', modelData);
-                summaryM.isSummary = true;
+                summaryM.isSummaryRecord = true;
                 features['summary'].dock === 'top' ? renderRecords.unshift(summaryM) : renderRecords.push(summaryM);
             }
 
@@ -546,7 +546,7 @@ Ext.define('Ext.ux.ExportableGrid', {
 
                     var param = rec.isGroupingHeader === true ? {dataIndex: 'groupingHeaderValue'} : exportTask.exportableColumns[j];
                     var type;
-                    if (!rec.isSummary && !rec.isGroupingHeader) {
+                    if (!rec.isSummaryRecord && !rec.isGroupingHeader) {
                         if (param.xtype === 'templatecolumn') {
                             type = 'template';
                         } else if (param.exportConverter) {
@@ -562,7 +562,7 @@ Ext.define('Ext.ux.ExportableGrid', {
 
                     switch (type) {
                         case 's':
-                            var styleId = rec.isGroupingHeader === true ? 5 : rec.isSummary ? 6 : (j + this.staticStylesCount);
+                            var styleId = rec.isGroupingHeader === true ? 5 : rec.isSummaryRecord ? 6 : (j + this.staticStylesCount);
                             if (rec.get(param.dataIndex) != null) {
                                 rows += '<c r="' + exportTask.alphabetColumns[currentCol++] + currentRow + '" t="str" s="' + styleId + '"><v>' + this.removeSpecials(Ext.util.Format.htmlEncode(String(rec.get(param.dataIndex)))) + '</v></c>';
                             } else {
