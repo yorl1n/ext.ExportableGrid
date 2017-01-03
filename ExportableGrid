@@ -504,9 +504,9 @@ Ext.define('Ext.ux.ExportableGrid', {
                                     var summaryObj = features['groupingsummary'].getSummary(this.store, exCol.summaryType, exCol.dataIndex, this.store.getGroups().map[gr.getGroupKey()]);
                                     var summaryVal = (summaryObj instanceof Object) && !(summaryObj instanceof Date) ? summaryObj[gr.getGroupKey()] : summaryObj;
                                     if (exCol.groupingSummaryConverter) {
-                                        modelData[exCol.dataIndex] = exCol.groupingSummaryConverter(summaryVal, features['groupingsummary'].summaryData, exCol.dataIndex, this.lockable ? exCol.locked ? this.lockedGrid.view.cellValues : this.normalGrid.view.cellValues : this.view.cellValues);
+                                        modelData[exCol.dataIndex] = exCol.groupingSummaryConverter(summaryVal, features['groupingsummary'].summaryData[gr.getGroupKey()], exCol.dataIndex, this.lockable ? exCol.locked ? this.lockedGrid.view.cellValues : this.normalGrid.view.cellValues : this.view.cellValues);
                                     } else if (exCol.summaryRenderer) {
-                                        modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['groupingsummary'].summaryData, exCol.dataIndex, this.lockable ? exCol.locked ? this.lockedGrid.view.cellValues : this.normalGrid.view.cellValues : this.view.cellValues);
+                                        modelData[exCol.dataIndex] = exCol.summaryRenderer(summaryVal, features['groupingsummary'].summaryData[gr.getGroupKey()], exCol.dataIndex, this.lockable ? exCol.locked ? this.lockedGrid.view.cellValues : this.normalGrid.view.cellValues : this.view.cellValues);
                                     } else {
                                         modelData[exCol.dataIndex] = summaryVal;
                                     }
