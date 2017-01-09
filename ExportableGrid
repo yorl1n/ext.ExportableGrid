@@ -514,6 +514,7 @@ Ext.define('Ext.ux.ExportableGrid', {
                                         modelData[exCol.dataIndex] = summaryVal;
                                     }
                                 }
+			    }
                             var summaryM = Ext.create('Ext.data.Model', modelData);
                             summaryM.isSummaryRecord = true;
                             renderRecords.push(summaryM);
