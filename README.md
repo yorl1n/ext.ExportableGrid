@@ -22,6 +22,37 @@ Additional parameters for columns
 - **summaryConverter** - function.If specified it will be used as renderer for summary feature in exported xls.
 - **groupingSummaryConverter** - function.If specified it will be used as renderer for goupingsummary feature in exported xls.
 
+Installation
+-----------------------
+Import jszip and FileSaver libraries into the project.
+F.e. in index.html
+
+```javascript
+<head>
+    ...
+    <script type="text/javascript" src="jszip.js"></script>
+    <script type="text/javascript" src="FileSaver.js"></script>
+    ...
+</head>
+```
+
+Place ExportableGrid.js into your UX directory, if there is no such then create one.
+F.e. in the same level with app.js create extjs/ux folder.
+Tell to the ExtJs where the UX directory is: in app.js add the following snippet:
+```javascript
+Ext.Loader.setConfig({
+    enabled: true,
+    paths: {
+        'Ext.ux': 'extjs/ux' //Should be the path to the ux folder.
+    }
+});
+
+Ext.application({
+...
+
+```
+Use Ext.require('Ext.ux.ExportableGrid') or just add to the requires list of the component, which will use the grid.
+
 Possible improvements
 -----------------------
 As proposed @nbgo to identify exportable type, the type of column could be used. 
